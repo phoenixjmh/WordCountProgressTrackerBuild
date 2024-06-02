@@ -2,8 +2,10 @@
 using Microsoft.VisualBasic;
 using System;
 using System.Drawing;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
+
 using Word = Microsoft.Office.Interop.Word;
 
 namespace WordCountProgressTracker
@@ -11,12 +13,12 @@ namespace WordCountProgressTracker
     public partial class WordCountProgressTracker
     {
         //=== Set Form References ===
-        private ProgressBar progressBar;
+        private System.Windows.Forms.ProgressBar progressBar;
         private Form statusBarForm;
-        private Label label;
-        private Button changeCountButton;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button changeCountButton;
         private int goalWordCount = 0;
-        private bool init=true;
+        private bool init = true;
 
         private void InternalStartup()
         {
@@ -29,23 +31,25 @@ namespace WordCountProgressTracker
 
             InitializeStatusBar();
 
-            this.Application.DocumentBeforeSave += ThisAddIn_DocumentBeforeSave; // Update on document change
-            this.Application.DocumentChange += ThisAddIn_DocumentChange; // Update on document change
+            this.Application.DocumentBeforeSave += BeforeSaveCallback; // Update on document change
+            this.Application.DocumentChange += DocumentChangeCallback; // Update on document change
             this.Application.WindowActivate += Application_WindowActivate; // Update on window activation
             init = false;
         }
 
-        private void ThisAddIn_DocumentBeforeSave(Document doc, ref bool SaveAsUI, ref bool Cancel)
+        private void BeforeSaveCallback(Document doc, ref bool SaveAsUI, ref bool Cancel)
         {
-            int currentWordCount = doc.Words.Count;
+            int currentWordCount = doc.ComputeStatistics(Word.WdStatistic.wdStatisticWords);
+
+
             double progressPercentage = (double)currentWordCount / goalWordCount * 100;
             UpdateStatusBar(currentWordCount, progressPercentage);
         }
-        private void ThisAddIn_DocumentChange()
+        private void DocumentChangeCallback()
         {
-            Document doc = this.Application.ActiveDocument;
-            progressBar.Maximum = goalWordCount;
-            int currentWordCount = doc.Words.Count;
+            int currentWordCount = this.Application.ActiveDocument.ComputeStatistics(Word.WdStatistic.wdStatisticWords);
+
+            //int currentWordCount = doc.Words.Count;
             double progressPercentage = (double)currentWordCount / goalWordCount * 100;
             UpdateStatusBar(currentWordCount, progressPercentage);
         }
@@ -61,8 +65,8 @@ namespace WordCountProgressTracker
                 StartPosition = FormStartPosition.CenterScreen
             };
 
-            TextBox textBox = new TextBox() { Left = 50, Top = 20, Width = 400 };
-            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox() { Left = 50, Top = 20, Width = 400 };
+            System.Windows.Forms.Button confirmation = new System.Windows.Forms.Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };
             confirmation.Click += (sender, e) => { prompt.Close(); };
 
             prompt.Controls.Add(textBox);
@@ -77,11 +81,9 @@ namespace WordCountProgressTracker
                 if (int.TryParse(textBox.Text, out int wordCountGoal))
                 {
                     goalWordCount = wordCountGoal;
-                    
                     if (!init)
                     {
-                        ThisAddIn_DocumentChange();
-
+                        DocumentChangeCallback();
                     }
 
                 }
@@ -95,22 +97,27 @@ namespace WordCountProgressTracker
 
         private void InitializeStatusBar()
         {
-            statusBarForm = new Form();
-            statusBarForm.Width = 600;
-            statusBarForm.Height = 150;
-            statusBarForm.FormBorderStyle = FormBorderStyle.SizableToolWindow;  
-            statusBarForm.StartPosition = FormStartPosition.Manual;    
-            statusBarForm.TopMost = true;                              
-            statusBarForm.ShowInTaskbar = false;                       
+            statusBarForm = new Form()
+            {
+                Width = 600,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.SizableToolWindow,
+                StartPosition = FormStartPosition.Manual,
+                TopMost = true,
+                ShowInTaskbar = false,
 
-            label = new Label();
-            label.AutoSize = false;
-            label.Width = 400;
-            label.TextAlign = ContentAlignment.MiddleCenter;
+            };
+            label = new System.Windows.Forms.Label()
+            {
+                AutoSize = false,
+                Width = 400,
+                TextAlign = ContentAlignment.MiddleCenter,
+
+            };
+
             statusBarForm.Controls.Add(label);
 
-
-            progressBar = new ProgressBar()
+            progressBar = new System.Windows.Forms.ProgressBar()
             {
                 Width = 400,
                 Height = 30,
@@ -119,11 +126,11 @@ namespace WordCountProgressTracker
                 ForeColor = Color.Green,
                 Top = label.Height,
             };
-            changeCountButton = new Button() { Text = "Change Word Count", Left = 100, Width = 200, Top = 70, DialogResult = DialogResult.OK };
+            changeCountButton = new System.Windows.Forms.Button() { Text = "Change Word Count", Left = 100, Width = 200, Top = 70, DialogResult = DialogResult.OK };
             changeCountButton.Click += (sender, e) => { PromptForWordCountGoal(); };
 
             //padding alignment
-            int padding = 5; 
+            int padding = 5;
             progressBar.Left = (statusBarForm.Width - progressBar.Width) / 2;
             changeCountButton.Left = (statusBarForm.Width - changeCountButton.Width) / 2;
             label.Left = (statusBarForm.Width - label.Width) / 2;
@@ -176,7 +183,7 @@ namespace WordCountProgressTracker
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             // Unsubscribe from events and close the form when shutting down
-            this.Application.DocumentBeforeSave -= ThisAddIn_DocumentBeforeSave;
+            this.Application.DocumentBeforeSave -= BeforeSaveCallback;
             this.Application.WindowActivate -= this.Application_WindowActivate;
             statusBarForm.Close();
         }
