@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FFF7F59-15AB-4938-A1BA-63391CB5AD26}|WordCountProgressTracker\\WordCountProgressTracker.csproj|c:\\users\\theultimatefuckstick\\documents\\projects\\graphics\\wordcountprogresstracker\\wordcountprogresstracker\\wordcountprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FFF7F59-15AB-4938-A1BA-63391CB5AD26}|WordCountProgressTracker\\WordCountProgressTracker.csproj|solutionrelative:wordcountprogresstracker\\wordcountprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FFF7F59-15AB-4938-A1BA-63391CB5AD26}|WordCountProgressTracker\\WordCountProgressTracker.csproj|C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\wordcountprogresstracker\\wordcountprogress.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FFF7F59-15AB-4938-A1BA-63391CB5AD26}|WordCountProgressTracker\\WordCountProgressTracker.csproj|solutionrelative:wordcountprogresstracker\\wordcountprogress.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 233,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WordCountProgress.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\WordCountProgressTracker\\WordCountProgress.Designer.cs",
+              "RelativeDocumentMoniker": "WordCountProgressTracker\\WordCountProgress.Designer.cs",
+              "ToolTip": "C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\WordCountProgressTracker\\WordCountProgress.Designer.cs",
+              "RelativeToolTip": "WordCountProgressTracker\\WordCountProgress.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwO0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T18:45:33.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WordCountProgress.cs",
+              "DocumentMoniker": "C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\WordCountProgressTracker\\WordCountProgress.cs",
+              "RelativeDocumentMoniker": "WordCountProgressTracker\\WordCountProgress.cs",
+              "ToolTip": "C:\\Users\\TheUltimateFuckstick\\Documents\\Projects\\Graphics\\WordCountProgressTracker\\WordCountProgressTracker\\WordCountProgress.cs",
+              "RelativeToolTip": "WordCountProgressTracker\\WordCountProgress.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAA0wEoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T18:07:51.939Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\bin\Release\WordCountProgressTracker.dll
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\bin\Release\WordCountProgressTracker.pdb
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\bin\Release\WordCountProgressTracker.dll.manifest
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\bin\Release\WordCountProgressTracker.vsto
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.csproj.AssemblyReference.cache
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.Properties.Resources.resources
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.csproj.GenerateResource.cache
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.csproj.CoreCompileInputs.cache
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCoun.E8CBDB88.Up2Date
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.dll
+C:\Users\TheUltimateFuckstick\Documents\Projects\Graphics\WordCountProgressTracker\WordCountProgressTracker\obj\Release\WordCountProgressTracker.pdb
